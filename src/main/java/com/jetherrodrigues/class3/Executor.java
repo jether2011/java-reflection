@@ -1,8 +1,7 @@
-package com.jetherrodrigues.class2;
+package com.jetherrodrigues.class3;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,10 +15,14 @@ public class Executor {
 		try {
 			loader.loader("classes.properties");
 			
-			System.out.println(loader.getImplementation(List.class));
-			System.out.println(loader.getImplementation(Map.class));
+			List<?> t = null;
+			try {
+				t = (List<?>) loader.getInstance(List.class);
+			} catch (InstantiationException | IllegalAccessException e) {
+				logger.error(e.getMessage());
+			}
 			
-			System.out.println(loader.getClass("java.util.Set"));
+			System.out.println(t.getClass());
 			
 		} catch (ClassNotFoundException | IOException e) {
 			logger.error(e.getMessage());

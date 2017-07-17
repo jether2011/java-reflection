@@ -1,4 +1,4 @@
-package com.jetherrodrigues.class2;
+package com.jetherrodrigues.class3;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -44,5 +44,10 @@ public class DynamicLoading {
 			logger.error(e.getMessage());
 		}
 		return map.get(key).toString();
+	}
+	
+	public Object getInstance(Class<?> interfaces) throws InstantiationException, IllegalAccessException {
+		Class<?> instance = map.get(interfaces);
+		return instance.newInstance();
 	}
 }
