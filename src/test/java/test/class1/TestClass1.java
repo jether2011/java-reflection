@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.jetherrodrigues.class1.NullValidator;
+import com.jetherrodrigues.class1.SearchValidator;
 import com.jetherrodrigues.class1.User;
 
 /**
@@ -56,6 +57,38 @@ public class TestClass1 {
 			Assert.assertTrue(list.contains("email"));
 			Assert.assertTrue(list.contains("username"));
 			Assert.assertTrue(list.contains("password"));
+
+		} catch (IllegalArgumentException | IllegalAccessException e) {
+			logger.error(e.getMessage());
+		}
+	}
+	
+	@Test
+	public void ObjectTestIfContain() {
+		User user = new User();
+		user.setName("Jether Rodrigues");
+
+		List<String> list = null;
+		try {
+			list = SearchValidator.getAttributesIfContains(user, "username");
+
+			Assert.assertEquals(1, list.size());
+			Assert.assertTrue(list.contains("username"));
+
+		} catch (IllegalArgumentException | IllegalAccessException e) {
+			logger.error(e.getMessage());
+		}
+	}
+	
+	@Test
+	public void ObjectTestSearch() {
+		List<String> list = null;
+		try {
+			list = SearchValidator.getAttributesIfContains(new User(), "name");
+
+			Assert.assertEquals(2, list.size());
+			Assert.assertTrue(list.contains("name"));
+			Assert.assertTrue(list.contains("username"));
 
 		} catch (IllegalArgumentException | IllegalAccessException e) {
 			logger.error(e.getMessage());
