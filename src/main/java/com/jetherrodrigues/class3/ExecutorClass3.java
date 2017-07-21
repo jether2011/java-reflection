@@ -7,9 +7,9 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Executor {
+public class ExecutorClass3 {
 	
-	private static final Logger logger = LoggerFactory.getLogger(Executor.class);
+	private static final Logger logger = LoggerFactory.getLogger(ExecutorClass3.class);
 
 	public static void main(String[] args) {
 		DynamicLoading loader = new DynamicLoading();
