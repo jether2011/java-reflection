@@ -1,8 +1,6 @@
-package com.jetherrodrigues.class6;
+package com.jetherrodrigues.class4.attributes;
 
 import javax.xml.bind.annotation.XmlRootElement;
-
-import com.jetherrodrigues.util.GsonSingleton;
 
 @XmlRootElement
 public class User {
@@ -42,19 +40,6 @@ public class User {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-	
-	public boolean isValidEmail(){
-		return email.contains("@");
-	}
-	
-	public boolean isValidPasswordLength(){
-		return password.length() >= 8;
-	}
-
-	@Override
-	public String toString() {
-		return GsonSingleton.getInstance().toJson(this);
 	}
 
 }

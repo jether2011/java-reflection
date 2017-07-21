@@ -7,9 +7,9 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.jetherrodrigues.class1.NullValidator;
-import com.jetherrodrigues.class1.SearchValidator;
-import com.jetherrodrigues.class1.User;
+import com.jetherrodrigues.class1.fieldsnullvalidators.NullValidator;
+import com.jetherrodrigues.class1.fieldsnullvalidators.SearchValidator;
+import com.jetherrodrigues.class1.fieldsnullvalidators.User;
 
 /**
  * 

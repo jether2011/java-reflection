@@ -1,4 +1,4 @@
-package com.jetherrodrigues.class3;
+package com.jetherrodrigues.class3.objects;
 
 import com.jetherrodrigues.util.GsonSingleton;
 

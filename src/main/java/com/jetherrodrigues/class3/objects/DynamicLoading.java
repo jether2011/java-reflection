@@ -1,7 +1,9 @@
-package com.jetherrodrigues.class2;
+package com.jetherrodrigues.class3.objects;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -44,5 +46,29 @@ public class DynamicLoading {
 			logger.error(e.getMessage());
 		}
 		return map.get(key).toString();
+	}
+	
+	public Object getInstance(Class<?> interfaces) throws InstantiationException, IllegalAccessException {
+		Class<?> instance = map.get(interfaces);
+		return instance.newInstance();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public <E> E getInstance2(Class<E> interfaces) throws InstantiationException, IllegalAccessException {
+		Class<?> instance = map.get(interfaces);
+		return (E) instance.newInstance();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public <E> E getInstance3(Class<E> interfaces, Object... params) throws InstantiationException, IllegalAccessException, NoSuchMethodException, SecurityException, IllegalArgumentException, InvocationTargetException {
+		Class<?> instance = map.get(interfaces);
+		Class<?>[] constructors = new Class<?>[params.length];
+		
+		for (int i = 0; i < constructors.length; i++) {
+			constructors[i] = params[i].getClass();
+		}
+		Constructor<?> c = instance.getConstructor(constructors);
+		
+		return (E) c.newInstance(params);
 	}
 }

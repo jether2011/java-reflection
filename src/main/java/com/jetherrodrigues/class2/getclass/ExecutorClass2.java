@@ -1,4 +1,4 @@
-package com.jetherrodrigues.class2;
+package com.jetherrodrigues.class2.getclass;
 
 import java.io.IOException;
 import java.util.List;

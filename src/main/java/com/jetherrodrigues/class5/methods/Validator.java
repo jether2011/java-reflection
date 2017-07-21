@@ -1,4 +1,4 @@
-package com.jetherrodrigues.class6;
+package com.jetherrodrigues.class5.methods;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

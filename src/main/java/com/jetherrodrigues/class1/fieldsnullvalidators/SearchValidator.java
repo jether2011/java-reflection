@@ -1,4 +1,4 @@
-package com.jetherrodrigues.class1;
+package com.jetherrodrigues.class1.fieldsnullvalidators;
 
 import java.io.Serializable;
 import java.lang.reflect.Field;

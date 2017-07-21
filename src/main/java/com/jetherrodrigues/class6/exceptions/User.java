@@ -1,4 +1,4 @@
-package com.jetherrodrigues.class5;
+package com.jetherrodrigues.class6.exceptions;
 
 import javax.xml.bind.annotation.XmlRootElement;
 

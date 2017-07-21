@@ -1,4 +1,4 @@
-package com.jetherrodrigues.class4;
+package com.jetherrodrigues.class4.attributes;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;
