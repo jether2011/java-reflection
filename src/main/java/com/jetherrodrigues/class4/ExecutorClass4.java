@@ -1,5 +1,7 @@
 package com.jetherrodrigues.class4;
 
+import java.util.Map;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,9 +18,18 @@ public class ExecutorClass4 {
 		
 		try {
 			System.out.println(XMLGenerator.getXML(user));
+			
+			@SuppressWarnings("rawtypes")
+			Map map = FieldValidators.getAttributesValues(user);
+			
+			for (Object key : map.keySet()) {
+				logger.info("{} - {}", key.toString(), map.get(key));
+			}
+			
 		} catch (IllegalArgumentException | IllegalAccessException e) {
 			logger.error(e.getMessage());
 		}
+		
 	}
 
 }
