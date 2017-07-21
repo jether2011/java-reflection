@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 
 public class DynamicLoading {
 	
-	private static final Logger logger = LoggerFactory.getLogger(Executor.class);
+	private static final Logger logger = LoggerFactory.getLogger(DynamicLoading.class);
 	private Map<Class<?>, Class<?>> map = new HashMap<>();
 	
 	public void loader(String file) throws FileNotFoundException, IOException, ClassNotFoundException{
